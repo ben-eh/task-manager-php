@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Task;
+use App\User;
 
 class TasksController extends Controller
 {
+    // Set up auth access control
+    public function __construct()
+    {
+      $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +22,14 @@ class TasksController extends Controller
     public function index()
     {
       $tasks = Task::all();
-      return view('index')->with('tasks', $tasks);
+      $user_id = auth()->user()->id;
+      // dd($user_id);
+      $user = User::find($user_id);
+      // dd($user->email);
+      // dd($user->tasks);
+      $tasks = Task::where('user_id', 'auth()->user()->id');
+      // dd($tasks);
+      return view('index')->with('tasks', $user->tasks);
     }
 
     /**
@@ -43,20 +57,10 @@ class TasksController extends Controller
 
       $task = new Task();
       $task->name = $request->input('name');
+      $task->user_id = auth()->user()->id;
       $task->save();
 
       return redirect('/');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -82,6 +86,26 @@ class TasksController extends Controller
         //
     }
 
+    public function prioritize($id)
+    {
+      // dd($id);
+      // if(auth()->user()->id !== $task->user_id) {
+      //   return redirect('/')->with('error', 'not your task to edit');
+      // }
+
+      $task = Task::find($id);
+      if ($task->priority) {
+        $task->priority = 0;
+        $task->save();
+      }
+      else  {
+        $task->priority = 1;
+        $task->save();
+      }
+
+      return redirect('/');
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -90,6 +114,6 @@ class TasksController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $task = Task::find($id);
     }
 }

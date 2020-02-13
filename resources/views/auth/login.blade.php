@@ -65,6 +65,9 @@
                             </div>
                         </div>
                     </form>
+                    <div>
+                      <p>If not registered, click <a href="/register">here</a>.</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -13,10 +13,18 @@
 
 // Route::match(['get', 'post'], '/', 'TasksController@index');
 
+
 Route::get('/', 'TasksController@index');
 
 Route::post('/', 'TasksController@store');
 
-// Auth::routes();
+Route::get('/home', 'TasksController@index');
+
+Route::any('/tasks/prioritize/{id}', 'TasksController@prioritize');
+
+Route::resource('tasks', 'TasksController');
+
+
+Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');

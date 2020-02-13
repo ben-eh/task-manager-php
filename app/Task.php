@@ -14,4 +14,8 @@ class Task extends Model
     'finished' => self::FINISHED,
     'priority' => self::PRIORITY,
   ];
+
+  public function user() {
+    return $this->belongsTo('App\User');
+  }
 }

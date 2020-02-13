@@ -13,8 +13,20 @@
 </form>
 
 <ul>
-  @foreach($tasks as $task_item)
-    <li>{{ $task_item->name }}</li>
+  @foreach($tasks as $task)
+    <li>
+      {{ $task->name }} - {{ $task->priority }}
+      <form action="/tasks/{{ $task->id }}" method="post">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+      <!-- <form action="/tasks/prioritize/{{ $task->id }}" method="post">
+        @csrf
+        <button type="submit" class="btn btn-danger">Prioritize</button>
+      </form> -->
+      <a href="/tasks/prioritize/{{ $task->id }}">Prioritize</a>
+    </li>
   @endforeach
 </ul>
 
