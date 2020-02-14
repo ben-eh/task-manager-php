@@ -16,18 +16,18 @@
   @foreach($tasks as $task)
     <li>
       {{ $task->name }} - {{ $task->priority }}
-      <form action="/tasks/{{ $task->id }}" method="post">
-        @csrf
-        @method('DELETE')
-        <button type="submit" class="btn btn-danger">Delete</button>
-      </form>
-      <!-- <form action="/tasks/prioritize/{{ $task->id }}" method="post">
-        @csrf
-        <button type="submit" class="btn btn-danger">Prioritize</button>
-      </form> -->
-      <a href="/tasks/prioritize/{{ $task->id }}">Prioritize</a>
+      <a href="/tasks/delete/{{ $task->id }}"><i class="fas fa-trash-alt"></i></a>
+      <a href="/tasks/prioritize/{{ $task->id }}"><i class="fas fa-chess-king"></i></a>
+      <a href="/tasks/finish/{{ $task->id }}"><i class="fas fa-check-square"></i></a>
     </li>
   @endforeach
+  <br>
 </ul>
 
+<h5>Test for Priority</h5>
+<ul>
+  @foreach($priorities as $priority)
+    <li>{{ $priority->name }}</li>
+  @endforeach
+</ul>
 @endsection

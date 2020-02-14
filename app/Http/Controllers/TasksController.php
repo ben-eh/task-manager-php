@@ -28,8 +28,20 @@ class TasksController extends Controller
       // dd($user->email);
       // dd($user->tasks);
       $tasks = Task::where('user_id', 'auth()->user()->id');
-      // dd($tasks);
-      return view('index')->with('tasks', $user->tasks);
+      $priorities = $tasks->where('priority', '1');
+      // dd($priorities);
+      // $priorities = Task::where([
+      //   ['user_id', '=', 'auth()->user()->id'],
+      //   ['priority', '=', '1']
+      // ]);
+      // $priorities = Task::where([
+      //   ['user_id', 'auth()->user()->id'],
+      //   ['priority', '1']
+      // ])->get();
+      // $priorities = Task::where('priority', '1');
+      // $priorities = Task::where('user_id', 'auth()->user()->id');
+      // dd($priorities);
+      return view('index')->with('tasks', $user->tasks)->with('priorities', $priorities);
     }
 
     /**
@@ -106,6 +118,20 @@ class TasksController extends Controller
       return redirect('/');
     }
 
+    public function finish($id) {
+      $task = Task::find($id);
+      if($task->finished) {
+        $task->finished = 0;
+        $task->save();
+      }
+      else {
+        $task->finished = 1;
+        $task->save();
+      }
+
+      return redirect('/');
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -115,5 +141,8 @@ class TasksController extends Controller
     public function destroy($id)
     {
       $task = Task::find($id);
+      $task->delete();
+
+      return redirect('/');
     }
 }

@@ -14,6 +14,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1e8b7d2424.js" crossorigin="anonymous"></script>
 </head>
 <body>
   @include('inc.navbar')

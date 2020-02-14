@@ -24,6 +24,10 @@ Route::any('/tasks/prioritize/{id}', 'TasksController@prioritize');
 
 Route::resource('tasks', 'TasksController');
 
+Route::any('/tasks/delete/{id}', 'TasksController@destroy');
+
+Route::any('/tasks/finish/{id}', 'TasksController@finish');
+
 
 Auth::routes();
 
