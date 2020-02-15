@@ -11,23 +11,21 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
+<?php if(count($data['tasks']) < 1): ?>
+    <h4>No tasks yet. Add one to get started.</h4>
+<?php endif ?>
+<?php echo count($data['tasks']) ?>
+<h5>Regular Tasks</h5>
 <ul>
-  @foreach($tasks as $task)
+  @foreach($data['regulars'] as $regular)
     <li>
-      {{ $task->name }} - {{ $task->priority }}
-      <a href="/tasks/delete/{{ $task->id }}"><i class="fas fa-trash-alt"></i></a>
-      <a href="/tasks/prioritize/{{ $task->id }}"><i class="fas fa-chess-king"></i></a>
-      <a href="/tasks/finish/{{ $task->id }}"><i class="fas fa-check-square"></i></a>
+      {{ $regular->name }} - {{ $regular->priority }}
+      <a href="/tasks/delete/{{ $regular->id }}"><i class="fas fa-trash-alt"></i></a>
+      <a href="/tasks/prioritize/{{ $regular->id }}"><i class="fas fa-chess-king"></i></a>
+      <a href="/tasks/finish/{{ $regular->id }}"><i class="fas fa-check-square"></i></a>
     </li>
   @endforeach
   <br>
 </ul>
 
-<h5>Test for Priority</h5>
-<ul>
-  @foreach($priorities as $priority)
-    <li>{{ $priority->name }}</li>
-  @endforeach
-</ul>
 @endsection

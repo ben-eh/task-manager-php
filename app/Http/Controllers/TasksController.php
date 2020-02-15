@@ -21,27 +21,12 @@ class TasksController extends Controller
      */
     public function index()
     {
-      $tasks = Task::all();
-      $user_id = auth()->user()->id;
-      // dd($user_id);
-      $user = User::find($user_id);
-      // dd($user->email);
-      // dd($user->tasks);
-      $tasks = Task::where('user_id', 'auth()->user()->id');
-      $priorities = $tasks->where('priority', '1');
-      // dd($priorities);
-      // $priorities = Task::where([
-      //   ['user_id', '=', 'auth()->user()->id'],
-      //   ['priority', '=', '1']
-      // ]);
-      // $priorities = Task::where([
-      //   ['user_id', 'auth()->user()->id'],
-      //   ['priority', '1']
-      // ])->get();
-      // $priorities = Task::where('priority', '1');
-      // $priorities = Task::where('user_id', 'auth()->user()->id');
-      // dd($priorities);
-      return view('index')->with('tasks', $user->tasks)->with('priorities', $priorities);
+      $tasks = User::find(auth()->user()->id)->tasks;
+      $priorities = $tasks->where('priority', 1);
+      $regulars = $tasks->where('priority', 0);
+      $completes = $tasks->where('finished', 1);
+      // return view('index')->with('regulars', $regulars)->with('priorities', $priorities);
+      return view('index')->with('data', ['tasks' => $tasks, 'regulars' => $regulars, 'priorities' => $priorities]);
     }
 
     /**
