@@ -22,11 +22,12 @@ class TasksController extends Controller
     public function index()
     {
       $tasks = User::find(auth()->user()->id)->tasks;
-      $priorities = $tasks->where('priority', 1);
-      $regulars = $tasks->where('priority', 0);
+      $actives = $tasks->where('finished', 0);
+      $priorities = $actives->where('priority', 1);
+      $regulars = $actives->where('priority', 0);
       $completes = $tasks->where('finished', 1);
       // return view('index')->with('regulars', $regulars)->with('priorities', $priorities);
-      return view('index')->with('data', ['tasks' => $tasks, 'regulars' => $regulars, 'priorities' => $priorities]);
+      return view('index')->with('data', ['tasks' => $tasks, 'regulars' => $regulars, 'priorities' => $priorities, 'completes' => $completes]);
     }
 
     /**
@@ -115,6 +116,15 @@ class TasksController extends Controller
       }
 
       return redirect('/');
+    }
+
+    public function removeFinished() {
+      // $tasks = User::find(auth()->user()->id)->tasks;
+      // // $tasks->where('finished', true)->delete();
+      // $to_delete = $tasks->where('finished', true);
+      // dd($to_delete);
+
+      return 123;
     }
 
     /**

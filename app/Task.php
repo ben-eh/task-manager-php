@@ -7,12 +7,12 @@ use App\Task;
 
 class Task extends Model
 {
-  const FINISHED = false;
-  const PRIORITY = false;
+  // const FINISHED = false;
+  // const PRIORITY = false;
 
   protected $attributes = [
-    'finished' => self::FINISHED,
-    'priority' => self::PRIORITY,
+    'finished' => false,
+    'priority' => true,
   ];
 
   public function user() {

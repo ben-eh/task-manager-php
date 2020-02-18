@@ -28,6 +28,8 @@ Route::any('/tasks/delete/{id}', 'TasksController@destroy');
 
 Route::any('/tasks/finish/{id}', 'TasksController@finish');
 
+Route::any('/tasks/remove', 'TasksController@removeFinished');
+
 
 Auth::routes();
 
