@@ -22,14 +22,14 @@ Route::get('/home', 'TasksController@index');
 
 Route::any('/tasks/prioritize/{id}', 'TasksController@prioritize');
 
-Route::resource('tasks', 'TasksController');
-
 Route::any('/tasks/delete/{id}', 'TasksController@destroy');
 
 Route::any('/tasks/finish/{id}', 'TasksController@finish');
 
-Route::any('/tasks/remove', 'TasksController@removeFinished');
+Route::any('/tasks/removeFinished', 'TasksController@removeFinished');
 
+
+Route::resource('tasks', 'TasksController');
 
 Auth::routes();
 

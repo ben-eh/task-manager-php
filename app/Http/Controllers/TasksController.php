@@ -119,12 +119,17 @@ class TasksController extends Controller
     }
 
     public function removeFinished() {
-      // $tasks = User::find(auth()->user()->id)->tasks;
+      $tasks = auth()->user()->tasks;
       // // $tasks->where('finished', true)->delete();
-      // $to_delete = $tasks->where('finished', true);
+      $to_delete = $tasks->where('finished', 1);
       // dd($to_delete);
+      foreach ($to_delete as $item) {
+        $item->delete();
+      }
 
-      return 123;
+      // $to_delete->delete();
+
+      return redirect('/');
     }
 
     /**

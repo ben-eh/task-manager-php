@@ -88,7 +88,7 @@
   </div>
 </div>
 
-<button><a href="/tasks/remove">Remove Finished Tasks</a></button>
+<button><a href="/tasks/removeFinished">Remove Finished Tasks</a></button>
 
 @endsection
 

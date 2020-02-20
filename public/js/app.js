@@ -49661,8 +49661,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/ben/code/php/task-manager-php/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/ben/code/php/task-manager-php/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/ben-eh/code/ben-eh/projects/php/task-manager-php/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/ben-eh/code/ben-eh/projects/php/task-manager-php/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

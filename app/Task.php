@@ -12,7 +12,7 @@ class Task extends Model
 
   protected $attributes = [
     'finished' => false,
-    'priority' => true,
+    'priority' => false,
   ];
 
   public function user() {
