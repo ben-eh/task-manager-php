@@ -11364,3 +11364,63 @@ a.text-dark:focus {
   list-style-type: none;
 }
 
+.center-div {
+  text-align: center;
+}
+
+.inline {
+  display: inline;
+}
+
+.task-input {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.no-list-bullets li {
+  text-align: left;
+  margin-left: 7em;
+  padding-right: 1em;
+}
+
+.no-list-bullets li a {
+  letter-spacing: 0.5em;
+}
+
+.form-input {
+  width: 20%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.input-group {
+  -webkit-box-flex: 0;
+          flex: none;
+}
+
+.form-control {
+  -webkit-box-flex: 0;
+          flex: none;
+}
+
+.form-input {
+  -webkit-box-flex: 0;
+          flex: none;
+}
+
+.tasks-card {
+  margin-top: 2em;
+}
+
+.input-card {
+  margin-top: 2em;
+}
+

@@ -5,3 +5,57 @@
 .no-list-bullets {
   list-style-type: none;
 }
+
+.center-div {
+  text-align: center;
+}
+
+.inline {
+  display: inline;
+}
+
+.task-input {
+  display: flex;
+  justify-content: center;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.no-list-bullets li {
+  text-align: left;
+  margin-left: 7em;
+  padding-right: 1em;
+}
+
+.no-list-bullets li a {
+  letter-spacing: 0.5em;
+}
+.form-input {
+  width: 20%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.input-group {
+  flex: none;
+}
+
+.form-control {
+  flex: none;
+}
+
+.form-input {
+  flex: none;
+}
+
+.tasks-card {
+  margin-top: 2em;
+}
+
+.input-card {
+  margin-top: 2em;
+}
