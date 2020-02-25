@@ -27,18 +27,18 @@
           <ul class="no-list-bullets">
             @foreach($data['priorities'] as $priority)
               <li>
-                {{ $priority->name }}
+                <p class="inline">{{ $priority->name }}</p>
                 <a href="/tasks/finish/{{ $priority->id }}"><i class="fas fa-check-square"></i></a>
                 <a href="/tasks/prioritize/{{ $priority->id }}"><i class="fas fa-chess-pawn"></i></a>
                 <a href="/tasks/delete/{{ $priority->id }}"><i class="fas fa-trash-alt"></i></a>
               </li>
             @endforeach
           </ul>
-          <h4 class="underline">Regulars</h4>
+          <h4 class="underline">To Do</h4>
           <ul class="no-list-bullets">
             @foreach($data['regulars'] as $regular)
               <li>
-                {{ $regular->name }}
+                <p class="inline">{{ $regular->name }}</p>
                 <a href="/tasks/finish/{{ $regular->id }}"><i class="fas fa-check-square"></i></a>
                 <a href="/tasks/prioritize/{{ $regular->id }}"><i class="fas fa-chess-king"></i></a>
                 <a href="/tasks/delete/{{ $regular->id }}"><i class="fas fa-trash-alt"></i></a>
@@ -51,7 +51,7 @@
           <ul class="no-list-bullets">
             @foreach($data['priorities'] as $priority)
               <li>
-                {{ $priority->name }}
+                <p class="inline">{{ $priority->name }}</p>
                 <a href="/tasks/finish/{{ $priority->id }}"><i class="fas fa-check-square"></i></a>
                 <a href="/tasks/prioritize/{{ $priority->id }}"><i class="fas fa-chess-king"></i></a>
                 <a href="/tasks/delete/{{ $priority->id }}"><i class="fas fa-trash-alt"></i></a>
@@ -64,7 +64,7 @@
           <ul class="no-list-bullets">
             @foreach($data['regulars'] as $regular)
               <li>
-                {{ $regular->name }}
+                <p class="inline">{{ $regular->name }}</p>
                 <a href="/tasks/finish/{{ $regular->id }}"><i class="fas fa-check-square"></i></a>
                 <a href="/tasks/prioritize/{{ $regular->id }}"><i class="fas fa-chess-king"></i></a>
                 <a href="/tasks/delete/{{ $regular->id }}"><i class="fas fa-trash-alt"></i></a>
@@ -76,11 +76,11 @@
         <?php endif ?>
       </div>
       <div class="col-md-6 center-text">
-        <h4 class="underline">Completed Tasks</h4>
+        <h4 class="underline">Completed</h4>
         <ul class="no-list-bullets">
           @foreach($data['completes'] as $complete)
             <li>
-              <p>{{ $complete->name }}</p>
+              <p class="inline">{{ $complete->name }}</p>
               <a href="/tasks/finish/{{ $complete->id }}"><i class="fas fa-list-ul"></i></a>
             </li>
           @endforeach
@@ -90,7 +90,9 @@
   </div>
 </div>
 
-<button><a href="/tasks/removeFinished">Remove Finished Tasks</a></button>
+<div class="center-text remove-tasks-button">
+  <button><a href="/tasks/removeFinished">Remove Finished Tasks</a></button>
+</div>
 
 @endsection
 

@@ -11356,6 +11356,24 @@ a.text-dark:focus {
   }
 }
 
+body {
+  background-color: #9F7C97;
+  color: #070707;
+  font-family: "Lato";
+}
+
+.fas {
+  color: #40434E;
+}
+
+.navbar {
+  background-color: #40434E !important;
+}
+
+.navbar.container {
+  color: #FDCFF3;
+}
+
 .center-text {
   text-align: center;
 }
@@ -11383,14 +11401,12 @@ a.text-dark:focus {
   text-decoration: underline;
 }
 
-.no-list-bullets li {
-  text-align: left;
-  margin-left: 7em;
-  padding-right: 1em;
-}
-
 .no-list-bullets li a {
   letter-spacing: 0.5em;
+}
+
+.no-list-bullets li p {
+  margin-right: 2em;
 }
 
 .form-input {
@@ -11422,5 +11438,13 @@ a.text-dark:focus {
 
 .input-card {
   margin-top: 2em;
+}
+
+.remove-tasks-button {
+  margin-top: 3.5em;
+}
+
+.remove-tasks-button a {
+  text-decoration: none;
 }
 

@@ -1,3 +1,21 @@
+body {
+  background-color: $mountbatten-pink;
+  color: $smoky-black;
+  font-family: 'Lato';
+}
+
+.fas {
+  color: $arsenic;
+}
+
+.navbar {
+  background-color: $arsenic !important;
+}
+
+.navbar.container {
+  color: $shampoo;
+}
+
 .center-text {
   text-align: center;
 }
@@ -23,15 +41,14 @@
   text-decoration: underline;
 }
 
-.no-list-bullets li {
-  text-align: left;
-  margin-left: 7em;
-  padding-right: 1em;
-}
-
 .no-list-bullets li a {
   letter-spacing: 0.5em;
 }
+
+.no-list-bullets li p {
+  margin-right: 2em;
+}
+
 .form-input {
   width: 20%;
 }
@@ -58,4 +75,12 @@
 
 .input-card {
   margin-top: 2em;
+}
+
+.remove-tasks-button {
+  margin-top: 3.5em;
+}
+
+.remove-tasks-button a {
+  text-decoration: none;
 }
