@@ -77,6 +77,15 @@ body a {
   margin-top: 2em;
 }
 
+.priority {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.completed-tasks {
+  text-decoration: line-through;
+}
+
 .input-card {
   margin-top: 2em;
 }
@@ -87,6 +96,10 @@ body a {
 
 .remove-tasks-button a {
   text-decoration: none;
+  color: $shampoo;
+  padding: 0.8em;
+  border-radius: 3%;
+  background-color: $arsenic;
 }
 
 .form-input-margins {

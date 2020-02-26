@@ -26,7 +26,7 @@
           <h3 class="underline">Priorities</h3>
           <ul class="no-list-bullets">
             @foreach($data['priorities'] as $priority)
-              <li>
+              <li class="priority">
                 <p class="inline">{{ $priority->name }}</p>
                 <a href="/tasks/finish/{{ $priority->id }}"><i class="fas fa-check-square"></i></a>
                 <a href="/tasks/prioritize/{{ $priority->id }}"><i class="fas fa-chess-pawn"></i></a>
@@ -50,7 +50,7 @@
           <h4>Priorities</h4>
           <ul class="no-list-bullets">
             @foreach($data['priorities'] as $priority)
-              <li>
+              <li class="priority">
                 <p class="inline">{{ $priority->name }}</p>
                 <a href="/tasks/finish/{{ $priority->id }}"><i class="fas fa-check-square"></i></a>
                 <a href="/tasks/prioritize/{{ $priority->id }}"><i class="fas fa-chess-king"></i></a>
@@ -80,7 +80,7 @@
         <ul class="no-list-bullets">
           @foreach($data['completes'] as $complete)
             <li>
-              <p class="inline">{{ $complete->name }}</p>
+              <p class="inline completed-tasks">{{ $complete->name }}</p>
               <a href="/tasks/finish/{{ $complete->id }}"><i class="fas fa-list-ul"></i></a>
             </li>
           @endforeach
@@ -91,7 +91,7 @@
 </div>
 
 <div class="center-text remove-tasks-button">
-  <button><a href="/tasks/removeFinished">Remove Finished Tasks</a></button>
+  <a href="/tasks/removeFinished">Remove Finished Tasks</a>
 </div>
 
 @endsection
