@@ -11362,6 +11362,10 @@ body {
   font-family: "Lato";
 }
 
+body a {
+  color: #FDCFF3;
+}
+
 .fas {
   color: #40434E;
 }
@@ -11446,5 +11450,13 @@ body {
 
 .remove-tasks-button a {
   text-decoration: none;
+}
+
+.form-input-margins {
+  margin: 1.5em 0;
+}
+
+.invalid-feedback {
+  color: black;
 }
 

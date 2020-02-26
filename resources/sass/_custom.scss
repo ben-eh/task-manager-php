@@ -4,6 +4,10 @@ body {
   font-family: 'Lato';
 }
 
+body a {
+  color: $shampoo;
+}
+
 .fas {
   color: $arsenic;
 }
@@ -83,4 +87,12 @@ body {
 
 .remove-tasks-button a {
   text-decoration: none;
+}
+
+.form-input-margins {
+  margin: 1.5em 0;
+}
+
+.invalid-feedback {
+  color: black;
 }
